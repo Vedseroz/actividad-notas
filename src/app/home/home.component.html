@@ -1,0 +1,39 @@
+
+<form [formGroup]="formulario" (ngSubmit)="EnviarDatos()">
+    <mat-card id="actualizar-card">
+
+<ul id="lista">
+    
+    <li>
+    <mat-form-field id="titulo" class="align">
+        <mat-label>Título</mat-label>
+        <input matInput formControlName="titulo" type="text" maxlength="40">
+    </mat-form-field>
+    </li>
+
+    <li>
+    <mat-form-field id="estado" class="align">
+        <mat-label>Estado</mat-label>
+        <mat-select formControlName="estado" required>
+            <mat-option value="abierto">Abierto</mat-option>
+            <mat-option value="en_progreso">En Progreso</mat-option>
+            <mat-option value="cerrado">Cerrado</mat-option>
+        </mat-select>
+    </mat-form-field>
+    </li>
+
+    <li>
+        <mat-form-field id="descripcion" class="align">
+            <mat-label>Descripción</mat-label>
+            <textarea formControlName="descripcion" matInput placeholder="Ingrese aqui su nota." maxlength="150" id="text-area" required></textarea>
+            
+        </mat-form-field>
+    </li>
+
+    <li>
+        <button type="submit" mat-fab color="primary" id="actualizar"><a [routerLink]="['/display']" routerLinkActive="router-link-active"><i class="fas fa-arrow-up"></i></a></button>
+    </li>
+
+</ul>
+</mat-card>
+</form>

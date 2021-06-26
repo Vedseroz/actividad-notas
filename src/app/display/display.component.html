@@ -1,0 +1,48 @@
+<mat-card>
+<table>
+    <!--notas abiertas-->
+    
+    <tr>
+        <th>Abierto</th>
+        <th>En Progreso</th>
+        <th>Cerrado</th>
+    </tr>  
+        <td>
+
+        <mat-card id="abierta">
+            <div>
+                <ul>
+                    <p *ngFor="let item of notas_abiertas"><li>Titulo: {{item.titulo}}</li> <li>Descripción: {{item.descripcion}}</li> <button mat-mini-fab color="white" class="editar"><a [routerLink]="['/home']" routerLinkActive="router-link-active"><i class="fas fa-edit"></i></a></button><button mat-mini-fab onClick="eliminarDatos(item)"><i class="fas fa-times"></i></button></p>
+                </ul>
+            </div>
+        </mat-card>
+        </td>
+        <td>
+            <mat-card id="enprogreso">
+                <div>
+                    <ul>
+                        <li>
+                            <p *ngFor="let item of notas_enprogreso"><li>Titulo: {{item.titulo}}</li> <li>Descripción: {{item.descripcion}}</li> <button mat-mini-fab color="white" class="editar"><a [routerLink]="['/home']" routerLinkActive="router-link-active"><i class="fas fa-edit"></i></a></button><button mat-mini-fab onClick="eliminarDatos(item)"><i class="fas fa-times"></i></button></p>
+                        </li>
+                    </ul>
+                </div>
+            </mat-card>
+        </td>
+        <td>
+            <mat-card id="cerrado">
+                <div >
+                    <ul>
+                        <li>
+                            <p *ngFor="let item of notas_cerradas"><li>Titulo: {{item.titulo}}</li> <li>Descripción {{item.descripcion}}</li> <button mat-mini-fab onClick="eliminarDatos(item)"><i class="fas fa-times"></i></button></p>
+                        </li>
+                    </ul>
+                </div>
+            </mat-card>
+        </td>
+    <tr>
+        <button mat-fab color="white" id="adicionar"><a [routerLink]="['/home']" routerLinkActive="router-link-active" ><i class="fas fa-plus"></i></a></button>
+    </tr>
+    
+        
+</table>
+</mat-card>
